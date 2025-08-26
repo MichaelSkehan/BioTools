@@ -19,7 +19,7 @@ def calculate_tm(sequence: str) -> float:
     NG = seq.count("G")
 
     # Apply formula
-    tm = 2 * (NA + NT) + 4 * (NC + NG) - 5
+    tm = (2 * (NA + NT)) + (4 * (NC + NG)) - 5
 
     return tm
 
