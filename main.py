@@ -32,3 +32,4 @@ if __name__ == "__main__":
     tm_value = calculate_tm(user_seq)
 
     print(f"Tm of {user_seq.upper()} = {tm_value} ℃")
+    print("Length: ", len(user_seq))
