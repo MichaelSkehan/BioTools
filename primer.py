@@ -75,11 +75,4 @@ class Primer:
             f"Recommended annealing time: {self.annealing_time} sec"
         )
 
-if __name__ == "__main__":
-    # Ask user for input
-    user_seq = input("Enter a DNA sequence (A, T, C, G): ")
-    primer = Primer(user_seq)
 
-    output = Primer.report(primer)
-
-    print (output)
