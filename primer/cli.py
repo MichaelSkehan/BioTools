@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 import click
-from primer import Primer
+from primer.primer import Primer
 
 @click.command()
 @click.argument("sequences", nargs=-1)

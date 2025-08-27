@@ -9,7 +9,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "ci=cli:main",  # 'ci' command calls main() in cli.py
+            "ci=primer.cli:main",  # 'ci' command calls main() in cli.py
         ],
     },
 )
