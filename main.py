@@ -55,7 +55,7 @@ class Primer:
         :rtype: int
 
         """
-        if self.length < 25:
+        if self.length > 25:
             return 5
         elif self.tm >= 55:
             return 5
@@ -71,7 +71,7 @@ class Primer:
         return (
             f"\nSequence: {self.sequence}\n"
             f"Length: {self.length} bp\n"
-            f"Tm: {self.tm} ℃\n"
+            f"Tm: {self.tm} \u00b0C\n"
             f"Recommended annealing time: {self.annealing_time} sec"
         )
 
@@ -80,6 +80,6 @@ if __name__ == "__main__":
     user_seq = input("Enter a DNA sequence (A, T, C, G): ")
     primer = Primer(user_seq)
 
-    tm_value = Primer.determine_annealing_time(primer)
+    output = Primer.report(primer)
 
-    print(f"Tm value: {tm_value}")
+    print (output)
