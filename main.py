@@ -3,18 +3,25 @@ class Primer:
     """
     A class representing a DNA primer.
 
-    Attributes:
-        sequence (str): The DNA sequence (A,T,C,G)
-        length (int): The length of the DNA sequence
-        tm (float): Calculated melting temperature in Celsius
-        annealing_time (int): Recommended annealing time in seconds
+    :param sequence: DNA sequence (A, T, C, G)
+    :type sequence: str
+
+    :ivar sequence: The primer sequence in uppercase letters.
+    :type sequence: str
+    :ivar length: Length of the sequence in base pairs.
+    :type length: int
+    :ivar tm: Calculated melting temperature (Tm, ℃).
+    :type tm: float
+    :ivar annealing_time: Recommended annealing time in seconds.
+    :type annealing_time: int
     """
     def __init__(self, sequence:str):
         """
         Initialise a Primer object
 
-        Parameters:
-            sequence (str) : DNA sequence (A,T,G,C)
+        :param sequence: The DNA sequence (A,T,C,G)
+        :return: None
+        :rtype: None
         """
         self.sequence = sequence.upper()
         self.length = len(self.sequence)
@@ -25,8 +32,8 @@ class Primer:
         """
         Calculate Tm (℃) of a DNA sequence.
 
-        Returns:
-            float: Calculated Tm in Celsius
+        :return: The Tm of a DNA sequence
+        :rtype: float
         """
 
         # Count nucleotides
@@ -44,8 +51,9 @@ class Primer:
         """
         Determine annealing time based on length and Tm
 
-        Returns:
-            int: Annealing time
+        :return: Time in seconds that the PCR reaction should anneal for
+        :rtype: int
+
         """
         if self.length < 25:
             return 5
@@ -53,6 +61,19 @@ class Primer:
             return 5
         else:
             return 15
+    def report(self):
+        """
+              Generate a formatted summary of the primer.
+
+              :return: A multi-line string containing the sequence, length, Tm, and annealing time.
+              :rtype: str
+              """
+        return (
+            f"\nSequence: {self.sequence}\n"
+            f"Length: {self.length} bp\n"
+            f"Tm: {self.tm} ℃\n"
+            f"Recommended annealing time: {self.annealing_time} sec"
+        )
 
 if __name__ == "__main__":
     # Ask user for input
