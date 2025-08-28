@@ -1,5 +1,5 @@
 import click
-from primer.primer import Primer
+from primer import Primer
 
 @click.command()
 @click.argument("sequences", nargs=-1)
