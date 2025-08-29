@@ -33,7 +33,7 @@ def extract_target_seq(seq):
 
     if len(fragments) > 1:
         return "Multiple digest products present, check sequence"
-    else
+    else:
         return fragments[0]
 
 if __name__ == '__main__':
