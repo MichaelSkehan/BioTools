@@ -9,7 +9,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "ci=primer.cli:main",  # 'ci' command calls main() in cli.py
+            "ci=primer_annealing_temp.cli:main",  # 'ci' command calls main() in cli.py
         ],
     },
 )

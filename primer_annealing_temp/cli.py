@@ -1,10 +1,10 @@
 import click
-from primer import Primer
+from primer_annealing_temp import Primer
 
 @click.command()
 @click.argument("sequences", nargs=-1)
 def main(sequences):
-    """CLI tool to analyze a DNA primer sequence."""
+    """CLI tool to analyze a DNA primer_annealing_temp sequence."""
     if not sequences:
         click.echo("No sequences provided.", err=True)
         return

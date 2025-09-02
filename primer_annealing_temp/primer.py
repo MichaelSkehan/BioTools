@@ -1,12 +1,12 @@
 
 class Primer:
     """
-    A class representing a DNA primer.
+    A class representing a DNA primer_annealing_temp.
 
     :param sequence: DNA sequence (A, T, C, G)
     :type sequence: str
 
-    :ivar sequence: The primer sequence in uppercase letters.
+    :ivar sequence: The primer_annealing_temp sequence in uppercase letters.
     :type sequence: str
     :ivar length: Length of the sequence in base pairs.
     :type length: int
@@ -63,7 +63,7 @@ class Primer:
             return 15
     def report(self):
         """
-              Generate a formatted summary of the primer.
+              Generate a formatted summary of the primer_annealing_temp.
 
               :return: A multi-line string containing the sequence, length, Tm, and annealing time.
               :rtype: str
