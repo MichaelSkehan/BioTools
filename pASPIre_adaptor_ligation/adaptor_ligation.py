@@ -1,4 +1,5 @@
 import adaptors
+from parse_csv import parse_csv
 
 def ligate(left, seq, right):
     """
@@ -18,7 +19,13 @@ def ligate(left, seq, right):
     return left + seq + right
 
 if __name__ == '__main__':
-    sequence = 'catgggggtttgtaccgtacaccactgagaccgcggtggttgaccagacaaaccacgaaggttctgttaagtaactgaacccaatgtcgttagtgacgcttacctcttaagaggtcactgacctaacaggatcccaccacaattcagcaaattgtgaacatcatcacgttcatctttccctggttgccaatggcccattttcctgtcagtaacgagaaggtcgcgaattcaggcgctttttagactggtcgtagcaacaaaatcaggcacaggcagaacaacaatgatcaaggcgacggacagaaaactgGGTGGAGGCGGTTCTgaaaatttatacttccaatccGGAGGTGGAGGCTCTCGAGCT'
-    LEFT = adaptors.LEFT_ADAPTORS['L1']
-    RIGHT = adaptors.RIGHT_ADAPTORS['R1']
-    print(ligate(LEFT,sequence, RIGHT))
+    list_of_ligated_sequences = []
+    for sample in parse_csv('test_csv.csv'):
+        sequence = sample[0]
+        left = adaptors.LEFT_ADAPTORS[sample[1]]
+        right = adaptors.RIGHT_ADAPTORS[sample[2]]
+
+        ligated_sequence = ligate(left, sequence, right)
+        list_of_ligated_sequences.append(ligated_sequence)
+
+    print(list_of_ligated_sequences)
