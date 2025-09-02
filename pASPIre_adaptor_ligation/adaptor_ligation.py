@@ -1,5 +1,6 @@
 import adaptors
 from parse_csv import parse_csv
+from restriction_digest import extract_target_seq
 
 def ligate(left, seq, right):
     """
@@ -20,7 +21,7 @@ def ligate(left, seq, right):
 
 if __name__ == '__main__':
     list_of_ligated_sequences = []
-    for sample in parse_csv('test_csv.csv'):
+    for sample in extract_target_seq('test_csv.csv'):
         sequence = sample[0]
         left = adaptors.LEFT_ADAPTORS[sample[1]]
         right = adaptors.RIGHT_ADAPTORS[sample[2]]
