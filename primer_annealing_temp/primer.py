@@ -49,7 +49,7 @@ class Primer:
 
     def determine_annealing_time(self) -> int:
         """
-        Determine annealing time based on length and Tm
+        Determine annealing time based on length and Tm for Primestar MAX polymerase
 
         :return: Time in seconds that the PCR reaction should anneal for
         :rtype: int
