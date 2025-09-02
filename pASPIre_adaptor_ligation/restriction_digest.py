@@ -6,8 +6,14 @@ import csv
 def extract_target_seq(csv_file, export_csv=False, filename="digest_products.csv"):
     """
     Extract the target sequence from a sequence.
-    :param seq: Bio.Seq object.
-    :return:
+    :param csv_file: The path to the CSV file.
+    :type: str
+    :param export_csv: Whether to export the results to a CSV file.
+    :type: bool
+    :param filename: The name of the file to export to.
+    :type: str
+    :return: list of lists containing the sequence, left adaptor, and right adaptor.
+    :rtype: list
     """
     digest_products = []
     parsed_seq = parse_csv(csv_file)
