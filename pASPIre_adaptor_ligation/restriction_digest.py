@@ -1,15 +1,16 @@
 from Bio.Restriction import *
 from Bio.Seq import Seq
 from parse_csv import parse_csv
+import csv
 
-def extract_target_seq(seq):
+def extract_target_seq(csv_file, export_csv=False, filename="digest_products.csv"):
     """
     Extract the target sequence from a sequence.
     :param seq: Bio.Seq object.
     :return:
     """
     digest_products = []
-    parsed_seq = parse_csv(seq)
+    parsed_seq = parse_csv(csv_file)
     rb = NcoI + SacI
     for plasmid in parsed_seq:
         fragment_list = []
@@ -43,6 +44,13 @@ def extract_target_seq(seq):
             fragment_list.append(plasmid[1])
             fragment_list.append(plasmid[2])
         digest_products.append(fragment_list)
+
+    if export_csv:
+        with open(filename, mode="w", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(["Sequence", "Left_Adaptor", "Right_Adaptor"])  # header
+            writer.writerows(digest_products)
+
     return digest_products
 
 
